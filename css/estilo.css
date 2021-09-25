@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font-size: 85%;
+}
+
+input,
+textarea,
+select,
+button {
+  outline: none;
+}
+
+h1, h2, h3, h4, h5, h5 {
+  font-weight: 400;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem auto;
+}
+
+.flex {
+  display: flex;
+  column-gap: 4rem;
+}
+
+.header {
+  width: 100%;
+  position: -webkit-sticky;
+  background: #ccc;
+}
+
+.menu-topo {
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+}
+
+.menu-topo span i {
+  font-size: 22px;
+}
+
+.logo {
+  width: 130px;
+  margin: 0px auto;
+}
+
+.logo-img {
+  display: block;
+  margin: 0 auto;
+  width: 130px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+  font-weight: bold;
+}
+
+.nav-btn {
+  display: flex;
+  column-gap: 1rem;
+}
+
+.nav-btn a,
+.produtos a {
+  color: rgb(48, 44, 44);
+}
+
+.nav-btn a i {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.buscar input {
+  border: none;
+  border-bottom: 1px solid rgb(48, 44, 44);
+  height: 40px;
+  padding-left: 12px;
+}
+
+.buscar button {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+}
+
+._db {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: rgb(77, 60, 60);
+}
+
+.container-flex {
+  max-width: 1100px;
+  margin: 5rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  row-gap: 4rem;
+}
+
+.produtos {
+  display: block;
+  overflow: hidden;
+  width: 230px;
+  box-shadow: 0 0 12px 4px #eee;
+  border-radius: 30px;
+}
+
+.produtos p {
+  padding: .8rem;
+}
+
+.produtos img {
+  width: 230px;
+  height: 230px;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform .8s;
+}
+
+.produtos img:hover {
+  transform: scale(1.05);
+  transition: transform .8s;
+}
+
+/*banner*/
+
+.banner img {
+  width: 100%;
+  height: 450px;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  color: rgb(36, 32, 32);
+}
+
+.swiper-pagination-bullet-active {
+  background: rgb(36, 32, 32);
+}
+
+.selos {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.selos img {
+  width: 120px;
+  margin: 20px 0;
+  padding: 20px 0;
+}
+
+.rodape {
+  display: flex;
+  justify-content: space-around;
+  line-height: 1.6;
+}
+
+.rodape h5 {
+  padding-bottom: 5px;
+}
+
+.rodape a {
+  color: white;
+}
+
+footer {
+  background: rgb(114, 121, 107);
+  padding: 15px 15px;
+  font-size: 110%;
+  color: cornsilk;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  column-gap: 1rem;
+}
+
+.social a {
+  color: #fff;
+  font-size: 24px;
+  transition: text-shadow 1s;
+}
+
+.social a :hover {
+  text-shadow:1px 1px 6px #fff;
+}
+
+/* ============== SOBRE ================= */
+.sobre {
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+.sobre-texto p {
+  padding: 8px 0;
+}
+
+/* ============== CONTATO ================= */
+.campo input[type="text"],
+.campo input[type="email"],
+.campo input[type="password"],
+.campo select,
+.campo textarea {
+  width: 100%;
+  padding-left: 10px;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+}
+
+.campo input#nao {
+  margin-left: 30px;
+}
+
+.campo textarea {
+  padding: 10px;
+  height: 90px;
+  resize: none;
+}
+
+/* ============== LOGIN ================= */
+.formulario {
+  width: 1100px;
+  margin: 4rem auto;
+  line-height: 1.6;
+  display: flex;
+  column-gap: 4rem;
+}
+
+.formulario div:last-of-type {
+  width: 50%;
+}
+
+.campo {
+  width: 100%;
+  margin: 15px 0;
+}
+
+.botao {
+  display: block;
+  background-color: rgb(114, 121, 107);
+  color: #fff;
+  height: 35px;
+  border: none;
+  width: auto;
+  padding: 10px;
+  align-items: center;
+  border-radius: 30px;
+  transition: background 1s;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background-color: rgb(86, 90, 83);
+}
+
+a.botao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  width: 140px;
+}
+
+.box {
+  box-shadow: 0 0 12px 4px #eee;
+  padding: 3rem;
+  border-radius: 30px;
+  width: 50%;
+  height: auto;
+}
+
+/* ============== BOLSA DETALHE ================= */
+.produto {
+  display: flex;
+  justify-content: center;
+  column-gap: 5rem;
+  margin: 4rem 0;
+}
+
+.produto-info {
+  line-height: 2;
+}
+
+.bolsa-oculta {
+  display: none;
+}
+
+#quantidade {
+  width: 50px;
+  height: 30px;
+  border-radius: 7px;
+  text-align: center;
+  border: 1px solid rgb(36, 32, 32);
+  margin-bottom: 2rem;
+}
+
+.tamanho-produto {
+  margin: 20px 0;
+}
+
+.tamanho-produto button {
+  background-color: #ffffff;
+  border: 1px solid #252525;
+  border-radius: 7px;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  text-align: center;
+}
+
+.coluna {
+  flex-direction: column;
+  row-gap: 2rem;
+  width: 100%;
+}
+
+/*====================== CARRINHO ==================*/
+.container {
+  margin: 4rem auto;
+  max-width: 1200px;
+}
+
+.container h2,
+.container h3 {
+  margin: 1rem
+}
+
+.carrinho-campo {
+  width: 450px;
+  display: flex;
+  column-gap: 1rem;
+}
+
+.carrinho-box {
+  width: 300px;
+  line-height: 2;
+  padding: 2rem;
+}
+
+.carrinho-box p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.continuar-comprando-link {
+  display: flex;
+  color: rgb(48, 44, 44);
+  align-items: center;
+  column-gap: .5rem;
+}
+
+.continuar-comprando-link:hover,
+.continuar-comprando-link:hover i {
+  color: rgb(114, 121, 107);
+}
+
+.carrinho i {
+  font-size: 22px;
+  color: rgb(48, 44, 44);
+}
+
+.carrinho .flex {
+  justify-content: space-between;
+}
+
+.carrinho-flex {
+  margin: 4rem auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 30px;
+  box-shadow: 0 0 12px 4px #eee;
+  padding: 4rem;
+}
+
+th {
+  text-align: left;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+tr,
+.pedido-info {
+  border-bottom: 1px solid #eee;
+  padding: 2rem;
+}
+
+td {
+  padding: 2rem;
+}
+
+td img {
+  width: 8rem;
+  height: 8rem;
+  margin-right: 1rem;
+}
+
+td input {
+  border: 1px solid #eee;
+  border-radius: 5px;
+  width: 70px;
+  height: 40px;
+  text-align: center;
+}
+
+/*========================== MINHA CONTA =======================*/
+.box h4 {
+  font-weight: 600;
+}
+
+.erro {
+  color: red;
+}
+
+.sucesso {
+  color: green;
+}
+
+.qtd_carrinho {
+  background: rgb(86, 90, 83);
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  transform: translate(-20px, -18px);
+}
+
+.pedidos .flex {
+  flex-wrap: wrap;
+  row-gap: 4rem;
+}
+
+.produto-info {
+  width: 250px;
+}
