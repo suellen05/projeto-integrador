@@ -10,6 +10,10 @@ include_once "includes/conexao.php";
 
 $id_cliente = $_SESSION['id'];
 
+$sql = $pdo->prepare("SELECT * FROM tb_clientes WHERE id = ?");
+$sql->execute([$id_cliente]);
+$cliente = $sql->fetch(PDO::FETCH_ASSOC);
+
 $stmt = $pdo->prepare("SELECT tb_pedidos.id, tb_pedidos.data, tb_pedidos.valor_total FROM tb_pedidos WHERE id_cliente = ?");
 $stmt->bindValue(1, $id_cliente, PDO::PARAM_INT);
 $stmt->execute();
@@ -31,17 +35,17 @@ $total_pedidos = $pdo->query("SELECT tb_pedidos.id, tb_clientes.id FROM tb_pedid
             <form method="post" action="cadastrar.php">
                 <div class="campo">
                     <label for="Nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" placeholder="*Digite seu Nome*">
+                    <input type="text" id="nome" name="nome" placeholder="*Digite seu Nome*" value="<?=$cliente['nome']?>">
                 </div>
 
                 <div class="campo">
                     <label for="endereco">Endereco:</label>
-                    <input type="text" id="endereco" name="endereco" placeholder="*Digite seu Endereço*">
+                    <input type="text" id="endereco" name="endereco" placeholder="*Digite seu Endereço*" value="<?=$cliente['endereco']?>">
                 </div>
 
                 <div class="campo">
                     <label for="cidade">Cidade:</label>
-                    <input type="text" id="cidade" name="cidade" placeholder="*Digite a Cidade*">
+                    <input type="text" id="cidade" name="cidade" placeholder="*Digite a Cidade*" value="<?=$cliente['cidade']?>">
                 </div>
 
                 <div class="campo">
@@ -56,15 +60,15 @@ $total_pedidos = $pdo->query("SELECT tb_pedidos.id, tb_clientes.id FROM tb_pedid
 
                 <div class="campo">
                     <label for="telefone">Telefone:</label>
-                    <input type="text" id="telefone" name="telefone" placeholder="*Digite seu Telefone*">
+                    <input type="text" id="telefone" name="telefone" placeholder="*Digite seu Telefone*" value="<?=$cliente['telefone']?>">
                 
                     <label for="cpf">CPF:</label>
-                    <input type="text" id="cpf" name="cpf" placeholder="*Digite seu CPF*">
+                    <input type="text" id="cpf" name="cpf" placeholder="*Digite seu CPF*" value="<?=$cliente['cpf']?>">
                 </div>
 
                 <div class="campo">
                     <label for="Email">Email:</label>
-                    <input type="text" id="telefone" name="email" placeholder="*Digite seu Email*">
+                    <input type="text" id="telefone" name="email" placeholder="*Digite seu Email*" value="<?=$cliente['email']?>">
                 </div>
 
                 <div class="campo">
@@ -73,7 +77,7 @@ $total_pedidos = $pdo->query("SELECT tb_pedidos.id, tb_clientes.id FROM tb_pedid
                 </div>
 
                 <div class="campo">
-                    <input class="botao" type="submit" name="acao" value="ENVIAR">
+                    <input class="botao" type="submit" name="acao" value="ALTERAR">
                 </div>
             </form>
         </div>
@@ -99,7 +103,7 @@ $total_pedidos = $pdo->query("SELECT tb_pedidos.id, tb_clientes.id FROM tb_pedid
                             <p>Valor total: <?=$pedido['valor_total'];?></p>
                             <p>Data da compra: <?=$pedido['data'];?></p>
                             <?php foreach($resultItens as $itens){ $fotos = explode(',', $itens['fotos']);?>
-                                <div class="pedido-info">
+                                <div class="pedido-info flex">
                                     <div>
                                         <img src="<?=$fotos[0]?>" width="80">
                                     </div>
